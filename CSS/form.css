@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+:root {
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #fffffc;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 500px;
+    border-radius: 25px;
+    background-color: #ddd;
+    padding: 20px;
+    box-shadow: -6px -6px 12px #ffffff73, 5px 5px 10px rgba(94, 104, 121, 0.290);
+    margin: 20px auto;
+}
+
+.form {
+    padding: 30px 40px;
+}
+
+.form h2 {
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.form-val {
+    margin-bottom: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.form-val input {
+    min-height: 2.5em;
+    width: 100%;
+    padding-left: 2.81rem;
+    font-size: 1.1rem;
+    outline: none;
+    background: #d8e1e7;
+    color: #8472db;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: inset 1.5px 1.5px 4.5px #babecc, inset -4.5px -4.5px 9.5px #ffffff73;
+}
+
+.form-val input:focus {
+    box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #ffffff73;
+}
+
+.form-val span {
+    position: absolute;
+    width: 3.12rem;
+    font-size: 20px;
+    left: 22px;
+    top: 22px;
+    align-items: center;
+    justify-content: center;
+    color: #595959;
+}
+
+.form-val label {
+    position: absolute;
+    top: 50%;
+    left: 2.812rem;
+    pointer-events: none;
+    color: #8472db;
+    transform: translateY(-50%);
+}
+
+::placeholder {
+    color: #8472db;
+}
+
+.form button {
+    margin: .9rem 0;
+    width: 30%;
+    height: 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #bdb2ff;
+    border: none;
+    color: #fffffc;
+    outline: none;
+    cursor: pointer;
+    border-radius: 26px;
+    box-shadow: 1.5px 1.5px 4.5px #babecc, -2.5px -2.5px 4px #ffffff73;
+}
+
+button:focus {
+    color: #fffffc;
+    box-shadow: inset 1.5px 1.5px 4.5px #babecc, inset -2.5px -2.5px 4px #ffffff73;
+}
+
+.form-val.success input {
+    border-color: var(--success-color);
+}
+
+.form-val.error input {
+    border-color: var(--error-color);
+}
+
+.form-val small {
+    color: var(--error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-val.error small {
+    visibility: visible;
+}
+
+.form-val i {
+    visibility: hidden;
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    padding-right: 5px;
+    font-size: 20px;
+    align-items: center;
+}
+
+.form-val.success i.fa-check-circle {
+    color: var(--success-color);
+    visibility: visible;
+}
+
+.form-val.error i.fa-exclamation-circle {
+    color: var(--error-color);
+    visibility: visible;
+}

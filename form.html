@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="./CSS/form.css">
+    <title>FORM VALIDATION</title>
+</head>
+
+<body>
+    <div class="container">
+        <form id="form" class="form">
+            <h2>Sign Up Please!</h2>
+            <div class="form-val">
+                <span class="fas fa-user"></span>
+                <input type="text" name="username" id="username" autocomplete="off" placeholder="Username">
+                <label for="username"></label>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small></small>
+            </div>
+            <div class="form-val">
+                <span class="fas fa-calendar-alt"></span>
+                <input type="text" id="date-of-birth" placeholder="DD/MM/YY" autocomplete="off">
+                <label for="Date-of-birth"></label>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small></small>
+            </div>
+            <div class="form-val">
+                <span class="fas fa-envelope"></span>
+                <input type="text" id="email" placeholder="Email" autocomplete="off">
+                <label for="email"></label>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small></small>
+            </div>
+            <div class="form-val">
+                <span class="fas fa-lock"></span>
+                <input type="password" id="password" placeholder="Password" autocomplete="off">
+                <label for="password"></label>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small></small>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+<script src="./JS/forms.js"></script>
+
+</html>
