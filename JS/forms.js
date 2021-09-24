@@ -12,6 +12,36 @@ function checkInputs() {
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
 
+    // for the error and success messages //Always create functions before you call them
+    function showError(input, message) {
+    const formVal = input.parentElement;
+    const small = formVal.querySelector('small');
+    formVal.className = 'form-val error';
+    small.innerText = message;
+    }
+
+    function showSuccess(input) {
+    const formVal = input.parentElement;
+    formVal.className = 'form-val success';
+    }
+    
+    // for the email regular expression 
+    function isEmail(email) {
+     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    }
+
+    // for the date regular expression
+    function isDateOfBirth(dateOfBirth) {
+        var parts = dateOfBirth.split(/[\/\-\.]/);
+
+    if (parts.length < 3) {
+        return false;
+    }
+    var dt = new Date(parts[2], parts[0] - 1, parts[1]);
+    console.log("date is ", dt.toString());
+    return (dt && dt.getMonth() === parseInt(parts[0], 10) - 1);
+    }
+    
     // the USername validation
     if (usernameValue === '') {
         showError(username, 'Username cannot be blank.');
@@ -52,32 +82,5 @@ form.addEventListener('submit', e => {
     checkInputs();
 });
 
-// for the error and success messages 
-function showError(input, message) {
-    const formVal = input.parentElement;
-    const small = formVal.querySelector('small');
-    formVal.className = 'form-val error';
-    small.innerText = message;
-}
 
-function showSuccess(input) {
-    const formVal = input.parentElement;
-    formVal.className = 'form-val success';
-}
 
-// for the email regular expression 
-function isEmail(email) {
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-}
-
-// for the date regular expression
-function isDateOfBirth(dateOfBirth) {
-    var parts = dateOfBirth.split(/[\/\-\.]/);
-
-    if (parts.length < 3) {
-        return false;
-    }
-    var dt = new Date(parts[2], parts[0] - 1, parts[1]);
-    console.log("date is ", dt.toString());
-    return (dt && dt.getMonth() === parseInt(parts[0], 10) - 1);
-}
